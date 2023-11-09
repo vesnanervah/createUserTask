@@ -1,0 +1,20 @@
+<div class="reg__step-one">
+    <form>
+        <div class="reg__field">
+            <input #mail type="email" class="reg__input" placeholder="Email" (keyup)="validateInput(mail, mailError, this.compareToMail, 'mail')" >
+            <div #mailError class="reg__validation_msg hidden">{{ emailValidationTxt }}</div>
+        </div>
+        <div class="reg__field">
+            <input #password type="password" class="reg__input" placeholder="Password" (keyup)="validateInput(password, passwordError, this.compareToPassword, 'password')">
+            <div #passwordError class="reg__validation_msg hidden">{{passwordValidationTxt}}</div>
+        </div>
+        <div class="reg__field">
+            <input #passwordRepeat type="password" class="reg__input" placeholder="Repeat password" (keyup)="validatePasswordRepeat(password, passwordRepeat, passwordRepeateError)">
+            <div #passwordRepeateError class="reg__validation_msg hidden">{{ passwordRepeatValidationTxt }}</div>
+        </div>
+        <button type="submit" class="reg__submit_btn" (click)="handleSubmitClick($event)">Create account</button>
+    </form>
+    <div class="reg__footer">
+        By clicking 'Create account' you agree to our privacy policy and to apply me in the job (joking)'.
+    </div>
+</div>

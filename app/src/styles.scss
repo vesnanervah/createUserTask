@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@import './sass/colors';
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: $white-l;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+
+    * {
+        box-sizing: border-box;
+    }
+}

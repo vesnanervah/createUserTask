@@ -1,0 +1,16 @@
+@import '../../sass/colors';
+
+.reg__wrapper {
+    margin: 100px auto;
+    width: 360px;
+    background-color: $white-blue;
+    border-radius: 12px;
+    padding: 38px 27px 60px;
+    justify-content: center;
+
+    .reg__header {
+        margin: 0px 0px 30px;
+        text-align: center;
+        color: $blue-xxl;
+    }
+}

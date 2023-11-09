@@ -1,0 +1,59 @@
+@import '../../../sass/colors';
+
+.reg__step-one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    form { 
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+     }
+
+    .reg__footer {
+        font-size: 12px;
+        line-height: 120%;
+        text-align: center;
+    }
+
+    .reg__validation_msg {
+        font-size: 11px;
+        text-align: center;
+        margin: 5px auto 0px;
+        color: $red;
+        opacity: 1;
+        transition: opacity 200ms;
+        &.hidden {
+            opacity: 0;
+        }
+    }
+
+    .reg__submit_btn {
+        border-radius: 18px;
+        background-color: $blue-xxl;
+        border: none;
+        color: $white-xxl;
+        font-weight: 500;
+        font-size: 16px;
+        padding: 8px 0px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .reg__input {
+        background-color: $white-l;
+        border: 1px solid $white-m;
+        width: 100%;
+        display: flex;
+        outline: none;
+        font-size: 16px;
+        padding: 10px 16px;
+        border-radius: 18px;
+    }
+
+}

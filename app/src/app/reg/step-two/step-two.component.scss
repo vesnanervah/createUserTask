@@ -1,0 +1,31 @@
+@import '../../../sass/colors';
+
+.reg__step-two {
+
+
+    .reg__input {
+        background-color: $white-l;
+        border: 1px solid $white-m;
+        width: 100%;
+        display: flex;
+        outline: none;
+        font-size: 16px;
+        padding: 10px 16px;
+        border-radius: 18px;
+    }
+
+    .reg__submit_btn {
+        margin-top: 22px;
+        border-radius: 18px;
+        background-color: $blue-xxl;
+        border: none;
+        color: $white-xxl;
+        font-weight: 500;
+        font-size: 16px;
+        padding: 8px 0px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
