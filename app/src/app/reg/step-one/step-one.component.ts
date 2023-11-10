@@ -35,7 +35,11 @@ export class StepOneComponent {
 
 
   validateInput(input: HTMLInputElement, errorLabel: HTMLDivElement, compareFn: (typed: string) => boolean, validationsKey: string) {
-    if (compareFn(input.value)) {
+    if (input.value.length === 0) {
+      errorLabel.classList.add('hidden');
+      this.validations[validationsKey] = false;
+    }
+    else if (compareFn(input.value)) {
       errorLabel.classList.add('hidden');
       this.validations[validationsKey] = true;
     } else {
@@ -45,7 +49,11 @@ export class StepOneComponent {
   }
 
   validatePasswordRepeat(passwordInput: HTMLInputElement, passwordRepeatInput: HTMLInputElement, valiadationErrorElem: HTMLDivElement) {
-    if (passwordInput.value === passwordRepeatInput.value ) {
+    if (passwordInput.value.length === 0) {
+      valiadationErrorElem.classList.add('hidden');
+      this.validations['repeatPassword'] = false;
+    }
+    else if (passwordInput.value === passwordRepeatInput.value ) {
       valiadationErrorElem.classList.add('hidden');
       this.validations['repeatPassword'] = true;
     } else {
