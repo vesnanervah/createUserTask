@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ThemeChangerComponent {
 
+  handleTogglerClick(toggling: HTMLSpanElement) {
+    toggling.classList.toggle('right');
+  }
 }
