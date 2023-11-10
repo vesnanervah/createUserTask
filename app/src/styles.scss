@@ -3,12 +3,31 @@
 body {
     margin: 0px;
     padding: 0px;
-    background-color: $white-l;
-    min-height: 100vh;
     font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
 
     * {
         box-sizing: border-box;
     }
+
+    --body-bg-color: var(--white-l);
+    --primary-color: var(--blue-xxl);
+    --secondary-color: var(--blue-s);
+    --popup-bg-color: var(--white-blue);
+    --input-bg-color: var(--white-l);
+    --input-border-color: var(--white-m);
+    --btn-text-color: var(--white-xxl);
+    --errors-color: var(--red);
+    --small-text-color: var(--black-xxl);
+
+    &.black-theme {
+        --body-bg-color: #352F44;
+        --popup-bg-color: #5C5470;
+        --primary-color: #B9B4C7;
+        --secondary-color: #5C5470;
+        --input-bg-color: #FAF0E6;
+        --btn-text-color: #FAF0E6;
+        --small-text-color: #FAF0E6;
+        --errors-color: rgb(219, 86, 86);
+    }
+
 }

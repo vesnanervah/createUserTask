@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  handleThemeChange(checked: boolean) {
+    checked ? document.body.classList.add('black-theme') : document.body.classList.remove('black-theme');
+  }
 }

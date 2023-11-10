@@ -1,6 +1,6 @@
-<div class="app">
+<div class="app" #app>
   <header>
-    <app-theme-changer></app-theme-changer>
+    <app-theme-changer (themeChanged)="handleThemeChange($event)"></app-theme-changer>
   </header>
   <main>
     <router-outlet></router-outlet>

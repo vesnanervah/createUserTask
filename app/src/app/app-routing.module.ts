@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: '', 
     redirectTo: 'registration', 
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'registration', 
