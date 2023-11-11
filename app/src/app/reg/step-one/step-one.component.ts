@@ -78,7 +78,6 @@ export class StepOneComponent extends BaseStep {
   }
 
   private moveToStepTwo() {
-  
     this.router.navigateByUrl('registration/stepTwo');
   }
 }
