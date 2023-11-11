@@ -1,4 +1,4 @@
-<div class="reg__step-one">
+<div class="reg__step-one" #stepOneRef>
     <form>
         <div class="reg__field">
             <input #mail type="email" class="reg__input" placeholder="Email" (keyup)="validateInput(mail, mailError, this.compareToMail, 'mail')" >

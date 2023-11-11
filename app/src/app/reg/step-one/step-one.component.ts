@@ -1,7 +1,9 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import {  Component, ViewChild } from '@angular/core';
 import { allowedChars } from './allowed-chars';
 import { Validations } from '../validations';
 import { Router } from '@angular/router';
+import BaseStep from '../base-step';
+import { ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-step-one',
@@ -9,8 +11,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./step-one.component.scss']
 })
 
-export class StepOneComponent {
-  private readyToSubmite = false;
+export class StepOneComponent extends BaseStep {
+  @ViewChild('stepOneRef') elemRef: ElementRef<HTMLDivElement> | undefined;
   private validations: Validations = {
     mail: false,
     password: false,
@@ -22,14 +24,16 @@ export class StepOneComponent {
 
   constructor(
     private router: Router
-  ) { }
+  ) {
+    super();
+   }
   
   handleSubmitClick(event: Event): void {
     event.preventDefault();
     if (Object.values(this.validations).every((val) => val === true)) {
-      this.moveToStepTwo()
+      this.handleStepComplete(this.elemRef?.nativeElement as HTMLDivElement, () => this.moveToStepTwo());
     } else {
-      alert('Some of the field are not valid');
+      this.handleStepIncomplete(this.elemRef?.nativeElement as HTMLDivElement);
     }
   }
 
