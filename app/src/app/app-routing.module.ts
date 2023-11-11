@@ -4,6 +4,7 @@ import { RegComponent } from './reg/reg.component';
 import { StepOneComponent } from './reg/step-one/step-one.component';
 import { StepTwoComponent } from './reg/step-two/step-two.component';
 import { StepThreeComponent } from './reg/step-three/step-three.component';
+import { UserRegData } from './reg/user-reg-data';
 
 const routes: Routes = [
   {
@@ -32,7 +33,9 @@ const routes: Routes = [
         path: 'stepThree',
         component: StepThreeComponent
       }
-    ]
+    ], data:{
+      userData: {} as UserRegData
+    }
   },
 ];
 

@@ -1,9 +1,10 @@
 import {  Component, ViewChild } from '@angular/core';
 import { allowedChars } from './allowed-chars';
 import { Validations } from '../validations';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import BaseStep from '../base-step';
 import { ElementRef } from '@angular/core';
+import { EmailConfirmService } from 'src/app/email-confirm.service';
 
 @Component({
   selector: 'app-step-one',
@@ -23,15 +24,24 @@ export class StepOneComponent extends BaseStep {
   passwordRepeatValidationTxt = 'Passwords should be the same';
 
   constructor(
-    private router: Router
+    private router: Router,
+    private emailConfirmService: EmailConfirmService,
+    private rout: ActivatedRoute
   ) {
     super();
    }
   
-  handleSubmitClick(event: Event): void {
+  handleSubmitClick(event: Event, email: string, password: string): void {
     event.preventDefault();
     if (Object.values(this.validations).every((val) => val === true)) {
-      this.handleStepComplete(this.elemRef?.nativeElement as HTMLDivElement, () => this.moveToStepTwo());
+      this.handleStepComplete(this.elemRef?.nativeElement as HTMLDivElement, () => {
+        this.emailConfirmService.initConfirm(email).subscribe((data) => {// колбек хелл реален
+          this.rout.parent?.data.subscribe((routParams) => {
+            routParams["userData"] = { email, password};
+            this.moveToStepTwo();
+          })
+        });
+      });
     } else {
       this.handleStepIncomplete(this.elemRef?.nativeElement as HTMLDivElement);
     }

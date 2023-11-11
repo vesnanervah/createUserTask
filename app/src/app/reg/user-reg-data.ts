@@ -4,3 +4,5 @@ type UserRegData = {
     name: string | undefined,
     imgUrl: string | undefined
 };
+
+export { UserRegData };
