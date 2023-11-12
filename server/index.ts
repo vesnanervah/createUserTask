@@ -4,7 +4,7 @@ import cors from 'cors';
 import nodemailer from 'nodemailer';
 import { PendingEmails } from './pending-emails';
 import { EmailConfirmByCodeBody, EmailConfirmInitBody } from './email-confirm-body';
-import { APP_PASS } from '../APP_PASS';
+import { APP_PASS, SENDER_EMAIL } from '../APP_PASS';
 
 const app = express();
 app.use(bodyParser.json());
@@ -53,7 +53,7 @@ app.listen(5000, () => {
 });
 
 function sendCodeToEmail(code: string, reciever: string) {
-    const user = 'vesnanervakh@gmail.com';
+    const user = SENDER_EMAIL;
     const pass = APP_PASS;
     const transporter = nodemailer.createTransport({
         service: 'gmail',

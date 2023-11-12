@@ -5,8 +5,8 @@ This is an app with 3-screen registration ui and server api. On first screen you
 ## Quick run
 
 1. Setup google app password: 
-Create a file called APP_PASS.ts in project root. Declare there const APP_PASS of type string end export it.
-This is required to google api, so your mailbox can be an email code sender.
+Create a file called APP_PASS.ts in project root. Declare there const APP_PASS and SENDER_EMAIL of type string end export them.
+This is required by google api, so server could use your mailbox as code sender.
 
 2. Run  backend server start script
 ```bash
