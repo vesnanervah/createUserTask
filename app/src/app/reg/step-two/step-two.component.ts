@@ -20,8 +20,6 @@ export class StepTwoComponent extends BaseStep {
   ) {
     super();
     this.rout.parent?.data.subscribe((routData) => {
-      console.log('Did user data moved to next page?')
-      console.log(routData);
       this.userData = routData['userData'];
     })
   }

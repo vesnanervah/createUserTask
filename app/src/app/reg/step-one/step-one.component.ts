@@ -34,13 +34,14 @@ export class StepOneComponent extends BaseStep {
   handleSubmitClick(event: Event, email: string, password: string): void {
     event.preventDefault();
     if (Object.values(this.validations).every((val) => val === true)) {
-      this.handleStepComplete(this.elemRef?.nativeElement as HTMLDivElement, () => {
-        this.emailConfirmService.initConfirm(email).subscribe((data) => {// колбек хелл реален
-          this.rout.parent?.data.subscribe((routParams) => {
-            routParams["userData"] = { email, password};
+      this.emailConfirmService.initConfirm(email).subscribe((data) => {// колбек хелл реален
+        console.log(data)
+        this.rout.parent?.data.subscribe((routParams) => {
+          routParams["userData"] = { email, password};
+          this.handleStepComplete(this.elemRef?.nativeElement as HTMLDivElement, () => {
             this.moveToStepTwo();
-          })
-        });
+          });
+        })
       });
     } else {
       this.handleStepIncomplete(this.elemRef?.nativeElement as HTMLDivElement);
