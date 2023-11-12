@@ -8,6 +8,7 @@ import { StepTwoComponent } from './reg/step-two/step-two.component';
 import { ThemeChangerComponent } from './theme-changer/theme-changer.component';
 import { StepThreeComponent } from './reg/step-three/step-three.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BaseValidatedInputComponent } from './reg/base-validated-input/base-validated-input.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     StepOneComponent,
     StepTwoComponent,
     ThemeChangerComponent,
-    StepThreeComponent
+    StepThreeComponent,
+    BaseValidatedInputComponent
   ],
   imports: [
     BrowserModule,

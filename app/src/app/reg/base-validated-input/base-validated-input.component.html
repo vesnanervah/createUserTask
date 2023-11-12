@@ -1,0 +1,4 @@
+<input #inputElem [type]="data?.inputType" class="validated_input" [placeholder]="data?.placeholder" 
+(keydown)="handleKeyDown($event)" (keyup)="handleKeyUp($event, inputElem.value)">
+<div #errorElem class="validation_msg hidden">{{ data?.errorMsg }}</div>
+

@@ -1,4 +1,6 @@
 <div class="reg__step-two" #elemRef>
-    <input type="text" class="reg__input" placeholder="Code" #code>
-    <button type="submit" class="reg__submit_btn" (click)="handleEnterClick(code.value)">Enter the code</button>
+    <form>
+        <app-base-validated-input [data]="validatedFields['code']" (typed)="handleFieldTyped($event)" (validation)="handleFieldValidation($event)"></app-base-validated-input>
+        <button type="submit" class="reg__submit_btn" (click)="handleEnterClick($event)">Enter the code</button>
+    </form>
 </div>
